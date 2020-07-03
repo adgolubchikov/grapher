@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<!--
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+-->
+<link rel="stylesheet" type="text/css" href="dialog/dialog-polyfill.css" />
+<link rel="stylesheet" href="material/font.css">
+<link rel="stylesheet" href="material/material.indigo-pink.min.css">
+<script defer src="material/material.min.js"></script>
+<script src="material/validate.min.js"></script>
+<script src="dialog/dialog-polyfill.js"></script>
+
+
+<link rel="stylesheet" href="style.css">
+<title>Graphics</title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+  <dialog class="mdl-dialog">
+   <h4 class="mdl-dialog__title" style="font-size:1.7rem">Add&nbsp;new&nbsp;graph?</h4>
+    <div class="mdl-dialog__content">
+      <p>
+<label onclick="setyx()" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+  <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+  <span class="mdl-radio__label">y(x)</span>
+</label>
+<label onclick="setxy()" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2" style="float:right">
+  <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+  <span class="mdl-radio__label">x(y)</span>
+</label>
+
+<br />
+
+<form action="#" onsubmit="add();return false">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><span id="formulatype">y(x)=</span>
+    <input class="mdl-textfield__input" type="text" id="userinput">
+    <label class="mdl-textfield__label" for="userinput"></label>
+  </div>
+</form>
+
+<input type="color" id="colorpicker" onchange="clickColor(0, -1, -1, 5)" value="#000000" style="width:10%;">
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" onclick="add()" class="mdl-button">OK</button>
+      <button type="button" onclick="dialog.close()" class="mdl-button close">Cancel</button>
+    </div>
+  </dialog>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+            mdl-layout--fixed-tabs">
+  <header id="header" class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Graphics</span>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer" id="list">
+    <span class="mdl-layout-title formula">
+		<span class="function">f(x)=x^2</span>
+		<i class="material-icons remove" onclick="remove(this)">cancel</i>
+        <input type="color" class="edit" value="#ff0000" style="width:10%;" onchange="draw()">
+	</span>
+    <span class="mdl-layout-title formula">
+		<span class="function">f(x)=3x</span>
+		<i class="material-icons remove" onclick="remove(this)">cancel</i>
+        <input type="color" class="edit" value="#00ff00" style="width:10%;" onchange="draw()">
+	</span>
+  </div>
+  <main class="mdl-layout__content">
+    <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+      <div class="page-content">
+		  <div id="graph">
+			  <canvas id="canvas"></div>
+		  </div>
+      </div>
+    </section>
+  </main>
+</div>
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" onclick="dialog.showModal()" id="add">
+  <i class="material-icons">add</i>
+</button>
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" onclick="mkscr()" id="save">
+  <i class="material-icons">save_alt</i>
+</button>
+<a id="screenshot" href="#" style="display:none" download="graphic.png"></a>
+<script src="parser.js"></script>
+<script src="lib.js"></script>
+<script src="grapher.js"></script>
+<script>
+
+
+
+</script>
+</body>
+</html>

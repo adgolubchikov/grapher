@@ -1,0 +1,31 @@
+#canvas {
+padding: 0px;
+}
+
+#add {
+position:absolute;
+z-index:2;
+bottom:10px;
+right:10px;
+
+}
+
+#save {
+position:absolute;
+z-index:2;
+bottom:10px;
+left:10px;
+
+}
+
+.remove {
+float:right;
+margin:11px;
+cursor:pointer;
+}
+
+.edit {
+float:right;
+margin:11px;
+cursor:pointer;
+}
